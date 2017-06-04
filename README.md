@@ -1,8 +1,8 @@
 # Airline_On-Time_Arrivals
 
 **Performance**
-Score: 0.954536458
-AUC: 0.985454718
+Score: 0.954536458.
+AUC: 0.985454718.
 
 
 **CARRIER_DELAY**
