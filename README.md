@@ -2,6 +2,10 @@
 By using the US Dept. of Transportation on-time arrival data for non-stop domestic flights by major air carriers to predict arrival delays.
 
 
+# Data Processing
+The data is downloaded from http://transtats.bts.gov/Tables.asp?DB_ID=120&DB_Name=Airline%20On-Time%20Performance%20Data&DB_Short_Name=On-Time and following parameters are selected:
+YEAR, MONTH, DAY_OF_MONTH, ORIGIN_AIRPORT_ID, DEST_AIRPORT_ID, CRS_DEP_TIME, DEP_DELAY, DEP_DEL15, CRS_ARR_TIME, ARR_DELAY, ARR_DEL15, CANCELLED, AIR_TIME, CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY
+
 # Result
 The predictor has over 95% accuracy. The 
 
