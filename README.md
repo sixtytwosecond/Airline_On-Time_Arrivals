@@ -68,22 +68,10 @@ Mean: 15.93859704
 Stddev: 59.80018393
 ```
 ```
-CARRIER_DELAY
-Correlation: 0.687167394
-Mean: 18.93067658
-Stddev: 59.80018393
-```
-```
 SECURITY_DELAY
 Correlation: 0.009949962
 Mean: 0.042885597
 Stddev: 1.704423366
-```
-```
-SECURITY_DELAY
-Correlation: 0.457991617
-Mean: 22.68101892
-Stddev: 45.29983658
 ```
 ```
           Importances
