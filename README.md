@@ -2,39 +2,52 @@
 By using the US Dept. of Transportation on-time arrival data for non-stop domestic flights by major air carriers to predict arrival delays.
 
 
-# Data Processing
+# Data Source
+The data is downloaded from http://transtats.bts.gov/Tables.asp?DB_ID=120&DB_Name=Airline%20On-Time%20Performance%20Data&DB_Short_Name=On-Time 
 
-## Source
-The data is downloaded from http://transtats.bts.gov/Tables.asp?DB_ID=120&DB_Name=Airline%20On-Time%20Performance%20Data&DB_Short_Name=On-Time and following parameters are selected:
-
-## Filter
+The following parameters are selected:
 ```
 YEAR, MONTH, DAY_OF_MONTH, ORIGIN_AIRPORT_ID, DEST_AIRPORT_ID, CRS_DEP_TIME, DEP_DELAY, DEP_DEL15, CRS_ARR_TIME, ARR_DELAY, ARR_DEL15, CANCELLED, AIR_TIME, CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY
 ```
 
-And these columns are dropped in our predictors:
+# Pre-processing
+And these columns are dropped before we train our predictor:
 ```
 DEP_DEL15:          It depends on DEP_DELAY which is already included 
 ARR_DELAY:          It depends on DEP_DEL15 which is the input
 YEAR:               We only use the data within the same year
 MONTH:              We only use the data within the same month
 CANCELLED:          It determines if the flight is cancelled
-CARRIER_DELAY:      It is directly related on DEP_DELAY
-WEATHER_DELAY:      It is directly related on DEP_DELAY
-NAS_DELAY:          It is directly related on DEP_DELAY
-SECURITY_DELAY:     It is directly related on DEP_DELAY
-LATE_AIRCRAFT_DELAY:It is directly related on DEP_DELAY
+CARRIER_DELAY:      It is directly related to DEP_DELAY
+WEATHER_DELAY:      It is directly related to DEP_DELAY
+NAS_DELAY:          It is directly related to DEP_DELAY
+SECURITY_DELAY:     It is directly related to DEP_DELAY
+LATE_AIRCRAFT_DELAY:It is directly related to DEP_DELAY
 ```
 Flight schedules which are cancelled are filtered out and any cell without value will be filled with 0
+
+# Process
+We run Random Forest and Logistic Regression and compare their performance.
+
+And then we find out the correlation between ARR_DELAY and CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY and understand which factor has the highest correlation to the delay
+
+Finally we run Multivariance Regression between ARR_DELAY and CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY and predict the Arrival delay in minutes
+
 
 # Result
 The predictor has over 95% accuracy. The 
 
+## Performance
+
 ```
-Performance
+Randon Forest
 Score: 0.954536458
 AUC: 0.985454718
 ```
+```
+Logistic Regression
+Score: 0.944566310963
+AUC: 0.972940120531
 ```
 CARRIER_DELAY
 Correlation: 0.687167394
