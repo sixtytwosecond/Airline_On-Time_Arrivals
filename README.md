@@ -36,7 +36,7 @@ ARR_DELAY
 and 
 ```
 CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY 
-```
+to
 and understand which factor has the highest correlation to the delay
 
 Finally we run Multivariance Regression between 
@@ -47,7 +47,7 @@ and
 ```
 DAY_OF_MONTH, ORIGIN_AIRPORT_ID, DEST_AIRPORT_ID, CRS_DEP_TIME CRS_ARR_TIME, ARR_DELAY, AIR_TIME, CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY 
 ```
-and predict the Arrival delay in minutes
+to predict the Arrival delay in minutes
 
 
 # Result
