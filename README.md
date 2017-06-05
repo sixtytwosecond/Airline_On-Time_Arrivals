@@ -6,44 +6,46 @@ By using the US Dept. of Transportation on-time arrival data for non-stop domest
 The predictor has over 95% accuracy. The 
 
 ```
-**Performance** <br />
-Score: 0.954536458 <br />
-AUC: 0.985454718 <br />
+Performance
+Score: 0.954536458
+AUC: 0.985454718
 ```
 ```
-**CARRIER_DELAY** <br />
-Correlation: 0.687167394 <br />
-Mean: 18.93067658 <br />
-Stddev: 59.80018393 <br />
-```	            
-**WEATHER_DELAY** <br />
-Correlation: 0.254758241 <br />
-Mean: 2.577601768 <br />
-Stddev: 32.30374947 <br />
-
-
-**NAS_DELAY** <br />
-Correlation: 0.240030894 <br />
-Mean: 15.93859704 <br />
-Stddev: 59.80018393 <br />
-
-
-**CARRIER_DELAY** <br />
-Correlation: 0.687167394 <br />
-Mean: 18.93067658 <br />
-Stddev: 59.80018393 <br />
-
-**SECURITY_DELAY** <br />
-Correlation: 0.009949962 <br />
-Mean: 0.042885597 <br />
-Stddev: 1.704423366 <br />
-
-
-**SECURITY_DELAY** <br />
-Correlation: 0.457991617 <br />
-Mean: 22.68101892 <br />
-Stddev: 45.29983658 <br />
-
+CARRIER_DELAY
+Correlation: 0.687167394
+Mean: 18.93067658
+Stddev: 59.80018393
+```	         
+```
+WEATHER_DELAY
+Correlation: 0.254758241
+Mean: 2.577601768
+Stddev: 32.30374947
+```
+```
+NAS_DELAY
+Correlation: 0.240030894
+Mean: 15.93859704
+Stddev: 59.80018393
+```
+```
+CARRIER_DELAY
+Correlation: 0.687167394
+Mean: 18.93067658
+Stddev: 59.80018393
+```
+```
+SECURITY_DELAY
+Correlation: 0.009949962
+Mean: 0.042885597
+Stddev: 1.704423366
+```
+```
+SECURITY_DELAY
+Correlation: 0.457991617
+Mean: 22.68101892
+Stddev: 45.29983658
+```
 
 **Importances** <br />
 DEP_DELAY: 0.54644626 <br />
