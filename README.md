@@ -13,8 +13,8 @@ YEAR, MONTH, DAY_OF_MONTH, ORIGIN_AIRPORT_ID, DEST_AIRPORT_ID, CRS_DEP_TIME, DEP
 # Pre-processing
 And these columns are dropped before we train our predictor:
 ```
-DEP_DEL15:          It depends on DEP_DELAY which is already included 
-ARR_DELAY:          It depends on DEP_DEL15 which is the input
+ARR_DEL15:          It depends on ARR_DELAY which is already included 
+DEP_DELAY:          It is directly related to DEP_DEL15
 YEAR:               We only use the data within the same year
 MONTH:              We only use the data within the same month
 CANCELLED:          It determines if the flight is cancelled
@@ -29,9 +29,21 @@ Flight schedules which are cancelled are filtered out and any cell without value
 # Process
 We run Random Forest and Logistic Regression and compare their performance.
 
-And then we find out the correlation between ARR_DELAY and CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY and understand which factor has the highest correlation to the delay
+And then we find out the correlation between 
+```
+ARR_DELAY 
+```
+and 
+```
+CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY 
+```
+and understand which factor has the highest correlation to the delay
 
-Finally we run Multivariance Regression between ARR_DELAY and CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY and predict the Arrival delay in minutes
+Finally we run Multivariance Regression between ARR_DELAY and 
+```
+DAY_OF_MONTH, ORIGIN_AIRPORT_ID, DEST_AIRPORT_ID, CRS_DEP_TIME CRS_ARR_TIME, ARR_DELAY, AIR_TIME, CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY 
+```
+and predict the Arrival delay in minutes
 
 
 # Result
