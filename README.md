@@ -3,8 +3,29 @@ By using the US Dept. of Transportation on-time arrival data for non-stop domest
 
 
 # Data Processing
+
+## Source
 The data is downloaded from http://transtats.bts.gov/Tables.asp?DB_ID=120&DB_Name=Airline%20On-Time%20Performance%20Data&DB_Short_Name=On-Time and following parameters are selected:
+
+## Filter
+```
 YEAR, MONTH, DAY_OF_MONTH, ORIGIN_AIRPORT_ID, DEST_AIRPORT_ID, CRS_DEP_TIME, DEP_DELAY, DEP_DEL15, CRS_ARR_TIME, ARR_DELAY, ARR_DEL15, CANCELLED, AIR_TIME, CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY
+```
+
+And these columns are dropped in our predictors:
+```
+DEP_DEL15:          It depends on DEP_DELAY which is already included 
+ARR_DELAY:          It depends on DEP_DEL15 which is the input
+YEAR:               We only use the data within the same year
+MONTH:              We only use the data within the same month
+CANCELLED:          It determines if the flight is cancelled
+CARRIER_DELAY:      It is directly related on DEP_DELAY
+WEATHER_DELAY:      It is directly related on DEP_DELAY
+NAS_DELAY:          It is directly related on DEP_DELAY
+SECURITY_DELAY:     It is directly related on DEP_DELAY
+LATE_AIRCRAFT_DELAY:It is directly related on DEP_DELAY
+```
+Flight schedules which are cancelled are filtered out and any cell without value will be filled with 0
 
 # Result
 The predictor has over 95% accuracy. The 
