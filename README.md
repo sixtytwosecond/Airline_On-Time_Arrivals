@@ -1,15 +1,21 @@
-# Airline_On-Time_Arrivals
+# Problem
+By using the US Dept. of Transportation on-time arrival data for non-stop domestic flights by major air carriers to predict arrival delays.
 
+
+# Result
+The predictor has over 95% accuracy. The 
+
+```
 **Performance** <br />
 Score: 0.954536458 <br />
 AUC: 0.985454718 <br />
-
-
+```
+```
 **CARRIER_DELAY** <br />
 Correlation: 0.687167394 <br />
 Mean: 18.93067658 <br />
 Stddev: 59.80018393 <br />
-	            
+```	            
 **WEATHER_DELAY** <br />
 Correlation: 0.254758241 <br />
 Mean: 2.577601768 <br />
