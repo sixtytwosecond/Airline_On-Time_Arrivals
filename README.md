@@ -52,12 +52,11 @@ to predict the Arrival delay in minutes
 
 
 # Result
-The predictor has over 95% accuracy. The 
+The predictor has over 95% accuracy. The performance of Random Forest is better than Logistic Regression as the AUC 
 
 ## Performance
-
 ```
-Randon Forest
+Random Forest
 Score: 0.954536458
 AUC: 0.985454718
 ```
@@ -66,6 +65,8 @@ Logistic Regression
 Score: 0.944566310963
 AUC: 0.972940120531
 ```
+
+## Correlation
 ```
 CARRIER_DELAY
 Correlation: 0.687167394
@@ -90,6 +91,8 @@ Correlation: 0.009949962
 Mean: 0.042885597
 Stddev: 1.704423366
 ```
+
+## Importance table by Random Forest
 ```
           Importances
 ==============================
@@ -110,6 +113,7 @@ FIRST_DEP_TIME:    0.004120558
 ==============================
 ```
 
+## Multivariance Regression
 |OLS Regression Results   ||||
 |--|--|--|--|
 |**Dep. Variable**|ARR_DELAY|**R-squared**|0.922|
