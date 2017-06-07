@@ -52,7 +52,14 @@ to predict the Arrival delay in minutes
 
 
 # Result
-The predictor has over 95% accuracy. The performance of Random Forest is better than Logistic Regression as the AUC 
+The predictor has over 95% accuracy. The performance of Random Forest is better than Logistic Regression in this case. 
+
+Interestingly CARRIER_DELAY is found to be closely correlated to the Arrival Delay, followed by WEATHER_DELAY. 
+
+From the importance table, DEP_DELAY is the most important factor to determine if the flight will delay for 15 minutes which it is not surprised. Interestingly TAXI_OUT and WHEELS_ON are the second and third important factors. 
+
+Furthermore we can predict how many minutes the flight is going to be late by using the result from the Multivariance regression.
+
 
 ## Performance
 ```
