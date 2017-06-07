@@ -52,7 +52,7 @@ to predict the Arrival delay in minutes
 
 
 # Result
-The predictor has over 95% accuracy. The performance of Random Forest is better than Logistic Regression in this case. 
+The predictor has over 95% accuracy. The performance of Random Forest is better than Logistic Regression in this case as the AUC is larger.
 
 Interestingly CARRIER_DELAY is found to be closely correlated to the Arrival Delay, followed by WEATHER_DELAY. 
 
