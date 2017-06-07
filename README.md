@@ -61,13 +61,13 @@ From the importance table, DEP_DELAY is the most important factor to determine i
 Furthermore we can predict how many minutes the flight is going to be late by using the result from the Multivariance regression.
 
 ## Weakness and Further Improvement
-This prediction reies sololy on the flight departure data. If the data can only be provided after the flight journy completes. This prediction is literally useless. 
+This prediction reies sololy on the flight departure data. If the departure data can only be provided after the flight journy completes. This prediction is literally useless. 
 
-We can also use the statistic model to calculate the probabily of the delay on a given day or a given flight
+In the future, we can also use the statistic model to calculate the probabily of the delay on a given day or a given flight.
 
 From our correlation result CARRIER_DELAY is closely correlated to the delay, if we can fetch more data on this topic it would be definitely helpful to the prediction.
 
-Although WEATHER_DELAY only shows little correlation to the delay, weather data is easy to acquire on the other hand. It can also improve the overall accuracy.
+Although WEATHER_DELAY only shows little correlation to the delay, weather data is easier to acquire on the other hand. It can also improve the accuracy.
 
 
 ## Performance
