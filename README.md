@@ -25,10 +25,10 @@ NAS_DELAY:          It is directly related to DEP_DELAY
 SECURITY_DELAY:     It is directly related to DEP_DELAY
 LATE_AIRCRAFT_DELAY:It is directly related to DEP_DELAY
 ```
-Only completed flight journy will be included so cancelled flight schedules are filtered out. Also any cell without a value will be filled with 0.
+Only completed flight journeys will be included to train our predictor so cancelled flight schedules will be filtered out. Also any cell without a value will be filled with 0.
 
 # Process
-In this case we will use Random Forest and Logistic Regression for the modal and then compare their performance.
+We will use Random Forest and Logistic Regression for the model and then compare their performance by using their AUC.
 
 Then we will find out the correlation between 
 ```
@@ -61,7 +61,7 @@ From the importance table, unsurprisingly DEP_DELAY is the most important factor
 Furthermore we can predict how many minutes the flight is going to be late by using the result from the Multivariance regression.
 
 ## Weakness and Further Improvement
-This prediction reies sololy on the flight departure data. If the departure data is only available after the flight journy completes, this prediction then is not useful. On the other hand we can use the statistic model to calculate the probabiity of the delay on a given day or a given flight. Also we can include other data source to improve the performance.
+This prediction reies sololy on the flight departure data. If the departure data is only available after the flight journey completes, this prediction then is not useful. On the other hand we can use the statistic model to calculate the probabiity of the delay on a given day or a given flight. Also we can include other data source to improve the performance.
 
 - From our correlation result CARRIER_DELAY is closely correlated to the delay, if we can get more data on this factor it would be definitely helpful to the prediction.
 
