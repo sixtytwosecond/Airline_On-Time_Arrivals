@@ -11,7 +11,8 @@ YEAR, MONTH, DAY_OF_MONTH, ORIGIN_AIRPORT_ID, DEST_AIRPORT_ID, CRS_DEP_TIME, DEP
 ```
 
 # Pre-processing
-And these columns are dropped before we train our predictor:
+## Drop Column
+These columns are dropped before we train our predictor:
 ```
 ARR_DEL15:          It depends on ARR_DELAY which is already included 
 DEP_DELAY:          It is directly related to DEP_DEL15
@@ -24,12 +25,12 @@ NAS_DELAY:          It is directly related to DEP_DELAY
 SECURITY_DELAY:     It is directly related to DEP_DELAY
 LATE_AIRCRAFT_DELAY:It is directly related to DEP_DELAY
 ```
-Flight schedules which are cancelled are filtered out and any cell without value will be filled with 0
+Only completed flight journy will be included so cancelled flight schedules are filtered out. Also any cell without a value will be filled with 0.
 
 # Process
-We run Random Forest and Logistic Regression and compare their performance.
+In this case we will use Random Forest and Logistic Regression for the modal and then compare their performance.
 
-And then we find out the correlation between 
+Then we will find out the correlation between 
 ```
 ARR_DELAY 
 ```
@@ -37,10 +38,9 @@ and
 ```
 CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY 
 ```
-to
-and understand which factor has the highest correlation to the delay
+to understand which factor has the highest correlation to the delay
 
-Finally we run Multivariance Regression between 
+Finally we will run Multivariance Regression between 
 ```
 ARR_DELAY
 ```
@@ -56,18 +56,18 @@ The predictor has over 95% accuracy. The performance of Random Forest is better 
 
 Interestingly CARRIER_DELAY is found to be closely correlated to the Arrival Delay, followed by WEATHER_DELAY and NAS_DELAY.
 
-From the importance table, DEP_DELAY is the most important factor to determine if the flight will delay for 15 minutes which it is not surprised. Interestingly TAXI_OUT and WHEELS_ON are the second and third important factors. 
+From the importance table, unsurprisingly DEP_DELAY is the most important factor to determine if the flight will delay for 15 minutes. Interestingly TAXI_OUT and WHEELS_ON are the second and third important factors. 
 
 Furthermore we can predict how many minutes the flight is going to be late by using the result from the Multivariance regression.
 
 ## Weakness and Further Improvement
-This prediction reies sololy on the flight departure data. If the departure data can only be provided after the flight journy completes. This prediction is literally useless. 
+This prediction reies sololy on the flight departure data. If the departure data cis only available after the flight journy completes, this prediction is literally useless. 
 
-In the future, we can also use the statistic model to calculate the probabily of the delay on a given day or a given flight.
+We can also use the statistic model to calculate the probabiity of the delay on a given day or a given flight.
 
-From our correlation result CARRIER_DELAY is closely correlated to the delay, if we can fetch more data on this topic it would be definitely helpful to the prediction.
+From our correlation result CARRIER_DELAY is closely correlated to the delay, if we can get more data on this factor it would be definitely helpful to the prediction.
 
-Although WEATHER_DELAY only shows little correlation to the delay, weather data is easier to acquire on the other hand. It can also improve the accuracy.
+Although WEATHER_DELAY only shows little correlation to the delay, weather data is easier to get on the other hand. It can also improve the accuracy.
 
 
 ## Performance
