@@ -129,7 +129,7 @@ FIRST_DEP_TIME:    0.004120558
 ==============================
 ```
 
-## Multivariance Regression
+## Multivariate Regression
 |OLS Regression Results   ||||
 |--|--|--|--|
 |**Dep. Variable**|ARR_DELAY|**R-squared**|0.922|
