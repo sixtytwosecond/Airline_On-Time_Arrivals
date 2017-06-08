@@ -40,7 +40,7 @@ CARRIER_DELAY, WEATHER_DELAY, NAS_DELAY, SECURITY_DELAY, LATE_AIRCRAFT_DELAY
 ```
 to understand which factor has the highest correlation to the delay
 
-Finally we will run Multivariance Regression between 
+Finally we will run Multivariate Regression between 
 ```
 ARR_DELAY
 ```
@@ -58,7 +58,7 @@ Interestingly CARRIER_DELAY is found to be closely correlated to the Arrival Del
 
 From the importance table, unsurprisingly DEP_DELAY is the most important factor to determine if the flight will delay for 15 minutes. Interestingly TAXI_OUT and WHEELS_ON are the second and third important factors. 
 
-Furthermore we can predict how many minutes the flight is going to be late by using the result from the Multivariance regression.
+Furthermore we can predict how many minutes the flight is going to be late by using the result from the Multivariate regression.
 
 ## Weakness and Further Improvement
 This prediction reies sololy on the flight departure data. If the departure data is only available after the flight journey completes, this prediction then is not useful. 
